@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Restaurant : IEnumerable<Employee>
+    public class Restaurant : IEnumerable<Employee>, ICloneable
     {
         public string RestaurantName { get; set; }
         private List<Employee> _employees;
@@ -27,6 +27,11 @@ namespace ConsoleApp1
         IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

@@ -25,7 +25,9 @@ Restaurant restaurant = new Restaurant(new List<Employee>()
     new Cook() { Name = "Raddimus"},
     new Cook() { Name = "Floyd" },
     new Manager() { Name = "David"}
-});
+})
+{ RestaurantName = "The Crusty Crab"};
+
 
 // Employees start working
 int customerCounter = 0;
@@ -59,3 +61,8 @@ Console.WriteLine("\nNew manager shows up");
 Manager newManager = new Manager() { Name = "Boris Karloff" };
 newManager.CloseRestaurant();
 newManager.CloseRestaurant(50);
+
+// Cloning restaurant
+var restauratClone = restaurant.Clone();
+
+Console.WriteLine(restauratClone);
